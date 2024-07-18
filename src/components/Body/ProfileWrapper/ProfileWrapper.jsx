@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './ProfileWrapper.module.css'
-import ProfileHeader from './ProfileHeader/ProfileHeaer'
+import ProfileHeader from './ProfileHeader/ProfileHeader'
 import ProfileLayoutSplit from './ProfileLayoutSplit/ProfileLayoutSplit'
 
 const ProfileWrapper = () => {

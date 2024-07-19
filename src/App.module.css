@@ -1,8 +1,14 @@
 .App {
   text-align: center;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
   background-color: aqua;
+  display: grid;
+  grid-template-columns: 2fr 10fr ;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "h h"
+    "LB p"
+
+  ;
 }
 

@@ -1,12 +1,12 @@
 import React from 'react';
-import style from './Body.module.css';
+import style from './Profile.module.css';
 import LeftBar from './LeftBar/LeftBar';
 import ProfileWrapper from './ProfileWrapper/ProfileWrapper';
 
 
-function Body(props) {
+function Profile(props) {
     return (
-        <div className={style.Body}>
+        <div className={style.Profile}>
 
            <LeftBar/>
            <ProfileWrapper/>
@@ -15,4 +15,4 @@ function Body(props) {
     );
 }
 
-export default Body;
+export default Profile;

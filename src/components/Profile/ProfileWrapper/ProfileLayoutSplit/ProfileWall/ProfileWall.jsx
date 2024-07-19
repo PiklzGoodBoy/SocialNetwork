@@ -1,12 +1,12 @@
 import React from 'react'
-import style from './ProfileWell.module.css';
+import style from './ProfileWall.module.css';
 import InternalGroup from './InternalGroup/InternalGroup';
 import SubmitPostBox from './SubmitPostBox/SubmitPostBox';
 import WallModule from './WallModule/WallModule';
 
-const ProfileWell = () => {
+const ProfileWall = () => {
   return (
-    <div className={style.ProfileWell}>
+    <div className={style.ProfileWall}>
       <InternalGroup />
       <div className={style.WallLegasy}>
         <SubmitPostBox/>
@@ -16,4 +16,4 @@ const ProfileWell = () => {
   )
 }
 
-export default ProfileWell
+export default ProfileWall

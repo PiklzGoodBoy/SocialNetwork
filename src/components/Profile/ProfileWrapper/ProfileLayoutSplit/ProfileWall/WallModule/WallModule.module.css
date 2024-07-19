@@ -1,7 +1,8 @@
 .WallModule{
-    height: 90px;
+    /* height: 90px; */
     background-color: #222222;
     border: 1px solid #363738;
+    padding: 1vh;
     margin: 8px;
     border-radius: 16px;
     color: aliceblue;

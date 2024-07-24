@@ -1,5 +1,7 @@
 .WallModule{
     /* height: 90px; */
+    display: grid;
+    justify-items: start;
     background-color: #222222;
     border: 1px solid #363738;
     padding: 1vh;

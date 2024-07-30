@@ -1,17 +1,18 @@
 import React from 'react'
 import style from './LeftBar.module.css'
+import { NavLink } from 'react-router-dom'
 
 const LeftBar = () => {
   return (
     <div className={style.LeftBar}>
-      <a href="/profile">Моя страница</a>
-      <a href="/news">Новости</a>
-      <a href="/dialogs">Мессенджер</a>
-      <a href="/friends">Друзья</a>
-      <a href="/community">Сообщества</a>
-      <a href="/music">Музыка</a>
-      <a href="/videos">Видео</a>
-      <a href="/games">Игры</a>
+      <NavLink to="/profile" activeClassName={style.activeLink} >Моя страница</NavLink>
+      <NavLink to="/news">Новости</NavLink>
+      <NavLink to="/dialogs">Мессенджер</NavLink>
+      <NavLink to="/friends">Друзья</NavLink>
+      <NavLink to="/community">Сообщества</NavLink>
+      <NavLink to="/music">Музыка</NavLink>
+      <NavLink to="/videos">Видео</NavLink>
+      <NavLink to="/games">Игры</NavLink>
     </div>
   )
 }

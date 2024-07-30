@@ -14,9 +14,15 @@
 
 .dialogs_items{
     background-color: #222222;
+    color: antiquewhite;
 }
 
 .messages{
+    color: antiquewhite;
     border: 1px solid #292929;
     background-color: #222222;
+}
+
+.dialog{
+    color: antiquewhite;
 }

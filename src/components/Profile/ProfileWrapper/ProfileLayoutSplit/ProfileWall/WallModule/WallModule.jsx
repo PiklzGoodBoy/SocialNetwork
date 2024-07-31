@@ -6,14 +6,14 @@ import Post from './Post/Post'
 const WallModule = () => {
 
   let postData = [
-    {message:"Hi, how are you?", likeCount:11},
-    {message:"It's my firtst project", likeCount:12}
+    { message: "Hi, how are you?", likeCount: 11 },
+    { message: "It's my firtst project", likeCount: 12 }
   ]
 
+  let Posts = postData.map(p => <Post message={p.message} />)
   return (
     <div className={style.WallModule}>
-      <Post message={postData[0].message}  />
-      <Post message={postData[1].message} />
+      {Posts}
     </div>
   )
 }

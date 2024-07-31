@@ -13,27 +13,29 @@ import Videos from './components/Videos/Videos';
 import Games from './components/Games/Games';
 
 
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className={style.app_wrapper}>
-      <Header />
-      <LeftBar />
-      <div className={style.app_wrapper_content}>
-        <Routes>
-          {/* <Route path='/' Component={Dialogs} /> */}
-          <Route path='dialogs' Component={Dialogs} />
-          <Route path='profile' Component={Profile} />
-          <Route path='news' Component={News} />
-          <Route path='friends' Component={Friends} />
-          <Route path='community' Component={Community} />
-          <Route path='music' Component={Music} />
-          <Route path='videos' Component={Videos} />
-          <Route path='games' Component={Games} />
-        </Routes>
+    <BrowserRouter>
+      <div className={style.app_wrapper}>
+        <Header />
+        <LeftBar />
+        <div className={style.app_wrapper_content}>
+          <Routes>
+            <Route path='/' Component={Profile} />
+            <Route path='dialogs' Component={Dialogs} />
+            <Route path='profile' Component={Profile} />
+            <Route path='news' Component={News} />
+            <Route path='friends' Component={Friends} />
+            <Route path='community' Component={Community} />
+            <Route path='music' Component={Music} />
+            <Route path='videos' Component={Videos} />
+            <Route path='games' Component={Games} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
   );
 }
 

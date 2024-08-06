@@ -4,27 +4,12 @@ import DialogLink from './DialogLink/DialogLink'
 import  Message  from './Message/Message'
 
 function Dialogs  (props)  {
-    let DialogsData = [
-            { id: 1, name: 'Dima' },
-            { id: 2, name: 'Masha' },
-            { id: 3, name: 'Sasha' },
-            { id: 4, name: 'Anton' },
-            { id: 5, name: 'Baton' }
-        ]
-    // console.log(props.name)
-        // debugger
-        let MessagesData = [
-                { id: 1, message: 'Hi' },
-                { id: 2, message: 'Welcome to Abab' },
-                { id: 3, message: 'WTF?' },
-                { id: 4, message: 'He he he' },
-                { id: 5, message: 'Wou' }
-            ]
-            
-            let dialogsElements = DialogsData
+    
+            console.log(props.DialogsData)
+            let dialogsElements = props.DialogsData
             .map(d => <DialogLink key={d.id} name={d.name} id={d.id} />);
             
-            let MessagesElement = MessagesData
+            let MessagesElement = props.MessagesData
             .map(m => <Message key={m.id} message={m.message} />)
             
             return (

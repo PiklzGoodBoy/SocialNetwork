@@ -3,10 +3,11 @@ import style from './ProfileLayoutSplit.module.css'
 import ProfileWall from './ProfileWall/ProfileWall'
 import ProfielRightCol from './ProfileRightCol/ProfielRightCol'
 
-const ProfileLayoutSplit = () => {
+const ProfileLayoutSplit = (props) => {
+  
     return (
         <div className={style.ProfileLayoutSplit}>
-            <ProfileWall/>
+            <ProfileWall postData={props.postData}/>
             <ProfielRightCol/>
         </div>
     )

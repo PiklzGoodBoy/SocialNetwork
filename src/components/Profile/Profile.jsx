@@ -3,12 +3,14 @@ import style from './Profile.module.css';
 import ProfileWrapper from './ProfileWrapper/ProfileWrapper';
 
 
-function Profile(props) {
+
+
+export default function Profile(props) {
+
+  
     return (
         <div className={style.Profile}>
-           <ProfileWrapper/>
+            <ProfileWrapper postData={props.post}/>
         </div>
     );
-}
-
-export default Profile;
+};

@@ -15,7 +15,13 @@ import Games from './components/Games/Games';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
+function App(props) {
+
+  let postData = [
+    { id: 1, message: "Hi, how are you?", likeCount: 11 },
+    { id: 2, message: "It's my firtst project", likeCount: 12 }
+  ]
+
   return (
     <BrowserRouter>
       <div className={style.app_wrapper}>
@@ -23,15 +29,15 @@ function App() {
         <LeftBar />
         <div className={style.app_wrapper_content}>
           <Routes>
-            <Route path='/' Component={Profile} />
-            <Route path='dialogs' Component={Dialogs} />
-            <Route path='profile' Component={Profile} />
-            <Route path='news' Component={News} />
-            <Route path='friends' Component={Friends} />
-            <Route path='community' Component={Community} />
-            <Route path='music' Component={Music} />
-            <Route path='videos' Component={Videos} />
-            <Route path='games' Component={Games} />
+            <Route path='/' element={<Profile/>}  />
+            <Route path='profile' element={<Profile post={postData}/>} />
+            <Route path='dialogs' element={<Dialogs />} />
+            <Route path='news' element={<News />} />
+            <Route path='friends' element={<Friends />} />
+            <Route path='community' element={<Community />} />
+            <Route path='music' element={<Music />} />
+            <Route path='videos' element={<Videos />} />
+            <Route path='games' element={<Games />} />
           </Routes>
         </div>
       </div>

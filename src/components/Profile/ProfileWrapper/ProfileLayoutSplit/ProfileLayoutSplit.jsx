@@ -3,7 +3,7 @@ import style from './ProfileLayoutSplit.module.css'
 import ProfileWall from './ProfileWall/ProfileWall'
 import ProfielRightCol from './ProfileRightCol/ProfielRightCol'
 
-const ProfileLayoutSplit = (props) => {
+export default function ProfileLayoutSplit  (props) {
   
     return (
         <div className={style.ProfileLayoutSplit}>
@@ -12,5 +12,3 @@ const ProfileLayoutSplit = (props) => {
         </div>
     )
 }
-
-export default ProfileLayoutSplit

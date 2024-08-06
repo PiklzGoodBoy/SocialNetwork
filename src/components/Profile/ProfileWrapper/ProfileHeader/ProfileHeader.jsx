@@ -4,14 +4,12 @@ import ProfileImg from './ProfileImg/ProfileImg'
 import ProfileInfo from './ProfileInfo/ProfileInfo'
 import ProfileSettings from './ProfileSettings/ProfileSettings'
 
-const ProfileHeader = () => {
+export default function ProfileHeader() {
   return (
     <div className={style.ProfileHeader}>
-        <ProfileImg/>    
-        <ProfileInfo/>
-        <ProfileSettings/>
+      <ProfileImg />
+      <ProfileInfo />
+      <ProfileSettings />
     </div>
   )
 }
-
-export default ProfileHeader

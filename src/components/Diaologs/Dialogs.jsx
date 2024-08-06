@@ -3,9 +3,7 @@ import style from './Dialogs.module.css'
 import DialogLink from './DialogLink/DialogLink'
 import  Message  from './Message/Message'
 
-function Dialogs  (props)  {
-    
-            console.log(props.DialogsData)
+export default function Dialogs  (props)  {
             let dialogsElements = props.DialogsData
             .map(d => <DialogLink key={d.id} name={d.name} id={d.id} />);
             
@@ -24,5 +22,3 @@ function Dialogs  (props)  {
 
     )
 }
-
-export default Dialogs

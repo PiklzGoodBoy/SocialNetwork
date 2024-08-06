@@ -1,10 +1,8 @@
 import React from 'react'
 import style from './ProfileFriends.module.css'
 
-const ProfileFriends = () => {
+export default function ProfileFriends  ()  {
     return (
         <div className={style.ProfileFriends}>ProfileFriends</div>
     )
 }
-
-export default ProfileFriends

@@ -2,7 +2,7 @@ import React from 'react'
 import style from './LeftBar.module.css'
 import { NavLink } from 'react-router-dom'
 
-const LeftBar = () => {
+export default function LeftBar ()  {
   return (
     <div className={style.LeftBar}>
       <NavLink to="/profile" className={style.activeLink} >Моя страница</NavLink> 
@@ -16,5 +16,3 @@ const LeftBar = () => {
     </div>
   )
 }
-
-export default LeftBar

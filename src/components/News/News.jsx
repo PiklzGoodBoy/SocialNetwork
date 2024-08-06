@@ -1,10 +1,8 @@
 import React from 'react'
 import style from './News.module.css'
 
-const News = () => {
+export default function News() {
   return (
     <div className={style.news}>News</div>
   )
 }
-
-export default News

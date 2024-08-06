@@ -4,7 +4,7 @@ import PrfoileFriends from './ProfileFriends/ProfileFriends'
 import ProfileSubscriptions from './ProfileSubscriptions/ProfileSubscriptions'
 import ProfileVideos from './ProfileVideos/ProfileVideos'
 
-const ScrollStickyWrapper = () => {
+export default function ScrollStickyWrapper  ()  {
   return (
     <div className={style.ScrollStickyWrapper}>
       <PrfoileFriends/>
@@ -13,5 +13,3 @@ const ScrollStickyWrapper = () => {
     </div>
   )
 }
-
-export default ScrollStickyWrapper

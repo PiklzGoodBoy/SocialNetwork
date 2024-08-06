@@ -9,7 +9,6 @@ let postData = [
   { id: 2, message: "It's my firtst project", likeCount: 12 }
 ]
 
-
 let DialogsData = [
   { id: 1, name: 'Dima' },
   { id: 2, name: 'Masha' },
@@ -18,6 +17,7 @@ let DialogsData = [
   { id: 5, name: 'Baton' },
   { id: 6, name: 'Vosik' }
 ]
+
 let MessagesData = [
   { id: 1, message: 'Hi' },
   { id: 2, message: 'Welcome to Abab' },

@@ -5,14 +5,12 @@ import SubmitPostBox from './SubmitPostBox/SubmitPostBox';
 import WallModule from './WallModule/WallModule';
 
 export default function ProfileWall(props) {
-
-
   return (
     <div className={style.ProfileWall}>
       <InternalGroup />
       <div className={style.WallLegasy}>
         <SubmitPostBox />
-        <WallModule postData={props.postData} />
+        <WallModule state={props.state} />
       </div>
     </div>
   )

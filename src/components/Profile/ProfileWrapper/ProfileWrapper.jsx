@@ -4,11 +4,10 @@ import ProfileHeader from './ProfileHeader/ProfileHeader'
 import ProfileLayoutSplit from './ProfileLayoutSplit/ProfileLayoutSplit'
 
 export default function ProfileWrapper(props) {
-
     return (
         <div className={style.ProfileWrapper}>
             <ProfileHeader />
-            <ProfileLayoutSplit postData={props.postData} />
+            <ProfileLayoutSplit state={props.state} />
         </div>
     )
 }

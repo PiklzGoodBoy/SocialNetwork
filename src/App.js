@@ -24,8 +24,10 @@ export default function App(props) {
         <div className={style.app_wrapper_content}>
           <Routes>
             <Route path='/' element={<Profile />} />
-            <Route path='profile' element={<Profile postData={props.postData} />} />
-            <Route path='dialogs' element={<Dialogs MessagesData={props.MessagesData} DialogsData={props.DialogsData} />} />
+            <Route path='profile' element={<Profile state={props.state.profilePage} />}
+            />
+            <Route path='dialogs' element={<Dialogs state={props.state.dialogsPage} />}
+            />
             <Route path='news' element={<News />} />
             <Route path='friends' element={<Friends />} />
             <Route path='community' element={<Community />} />

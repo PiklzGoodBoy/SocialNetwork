@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+<<<<<<< HEAD
 
 let postData = [
   { id: 1, message: "Hi, how are you?", likeCount: 11 },
@@ -26,11 +27,14 @@ let MessagesData = [
   { id: 5, message: 'Wou' },
   { id: 5, message: 'You Boy' }
 ]
+=======
+import state from './redux/state';
+>>>>>>> cef0295 (state:Profile,Dialogs)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App postData={postData} DialogsData={DialogsData} MessagesData={MessagesData} />
+    <App state={state} />
   </React.StrictMode>
 );
 

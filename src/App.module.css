@@ -2,16 +2,15 @@
   /* text-align: center; */
   height: 100%;
   background-color: #141414;
-  display: grid;
-  grid-template-columns: 2fr 10fr;
-  /* grid-template-rows: 1fr; */
+  /* display: grid; */
+  /* grid-template-columns: 2fr 10fr; */
+  /* grid-template-rows: 1fr;
   grid-template-areas:
     "h h"
-    "LB p"
-  ;
+  ; */
 }
 
-.app-wrapper-content {
-  grid-area: p;
-  text-align: center;
+.content{
+  display: grid;
+  grid-template-columns:1fr 1fr 6fr 1fr;
 }

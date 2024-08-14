@@ -3,7 +3,6 @@
     grid-template-rows: repeat(7,24px);
     padding-left: 8px;
 
-    grid-area: LB;
 }
 
 .LeftBar a{

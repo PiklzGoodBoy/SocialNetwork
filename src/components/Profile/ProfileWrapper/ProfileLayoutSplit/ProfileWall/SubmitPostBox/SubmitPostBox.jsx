@@ -4,8 +4,13 @@ import style from './SubmitPostBox.module.css'
 
 export default function SubmitPostBox() {
   
+  let newPostElement = React.createRef();
+
+
+
   let addPost=()=>{
-    alert('Samurai')
+    let text = newPostElement.current.value
+    alert(text)
   };
   
   
@@ -14,7 +19,7 @@ export default function SubmitPostBox() {
     <div className={style.SubmitPostBox}>
 
       <div>
-        <textarea >
+        <textarea ref={newPostElement}>
       </textarea>
       </div>
       <button onClick={addPost}>Add post</button>

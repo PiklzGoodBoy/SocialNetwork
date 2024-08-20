@@ -1,0 +1,10 @@
+.message{
+    display: grid;
+    grid-template-rows: 8fr 1fr;
+    
+    color: antiquewhite;
+    background-color: #222222;
+    border-radius: 16px;
+    padding: 4px;
+    height: 100%;
+}

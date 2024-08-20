@@ -1,0 +1,20 @@
+.SubmitMessages{
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    background-color: #222222;
+    border: 1px solid #363738;
+    margin: 8px;
+    padding: 4px;
+    border-radius: 16px;
+    color: aliceblue;
+}
+
+.SubmitMessages textarea{
+    width: 96%;
+    border-radius: 16px;
+}
+
+.SubmitMessages button{
+    border-radius: 16px;
+    margin-left: 4px;
+}

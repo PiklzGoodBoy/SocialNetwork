@@ -1,4 +1,31 @@
-.DialogLink a{
+.DialogLink {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    background-color: rgba(150, 128, 102, 0.171);
+    margin-bottom: 4px;
+    border-radius: 16px;
+}
+
+.DialogLink:hover{
+    background-color: rgba(158, 165, 62, 0.568);
+}
+
+.DialogLink a {
     color: antiquewhite;
     text-decoration: none;
+}
+
+.DialogLink a:hover {
+    color: chocolate;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    padding-bottom: 16px;
+}
+
+img {
+    padding: 4px;
+    height: 64px;
+    width: 64px;
+    border-radius: 40px;
 }

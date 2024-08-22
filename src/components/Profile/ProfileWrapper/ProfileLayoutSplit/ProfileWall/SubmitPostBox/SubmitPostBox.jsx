@@ -2,13 +2,15 @@ import React from 'react'
 import style from './SubmitPostBox.module.css'
 
 
-export default function SubmitPostBox() {
+export default function SubmitPostBox(props) {
   
   let newPostElement = React.createRef();
 
+
   let addPost=()=>{
+    debugger
     let text = newPostElement.current.value
-    alert(text)
+    props.addPost(text);
   };
   
   

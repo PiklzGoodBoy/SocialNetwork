@@ -24,8 +24,8 @@ export default function App(props) {
           <LeftBar />
           <div className={style.app_wrapper_content}>
             <Routes>
-              <Route path='/' element={<Profile state={props.state.profilePage} />} />
-              <Route path='profile' element={<Profile state={props.state.profilePage} />}
+              <Route path='/' element={<Profile state={props.state.profilePage} addPost={props.addPost}/>} />
+              <Route path='profile' element={<Profile state={props.state.profilePage} addPost={props.addPost}/>}
               />
               <Route path='dialogs' element={<Dialogs state={props.state.dialogsPage} />}
               />

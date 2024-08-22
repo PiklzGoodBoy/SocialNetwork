@@ -9,8 +9,8 @@ export default function ProfileWall(props) {
     <div className={style.ProfileWall}>
       <InternalGroup />
       <div className={style.WallLegasy}>
-        <SubmitPostBox />
-        <WallModule state={props.state} />
+        <SubmitPostBox state={props.state} addPost={props.addPost}/>
+        <WallModule state={props.state} addPost={props.addPost}/>
       </div>
     </div>
   )

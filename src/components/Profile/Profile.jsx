@@ -5,7 +5,7 @@ import ProfileWrapper from './ProfileWrapper/ProfileWrapper';
 export default function Profile(props) { 
     return (
         <div className={style.Profile}>
-            <ProfileWrapper state={props.state}/>
+            <ProfileWrapper state={props.state} addPost={props.addPost}/>
         </div>
     );
 };

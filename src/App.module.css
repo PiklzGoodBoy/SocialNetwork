@@ -1,13 +1,7 @@
 .app_wrapper {
-  /* text-align: center; */
-  height: 100%;
+  height: 100vh;
   background-color: #141414;
-  /* display: grid; */
-  /* grid-template-columns: 2fr 10fr; */
-  /* grid-template-rows: 1fr;
-  grid-template-areas:
-    "h h"
-  ; */
+  overflow-x: hidden; 
 }
 
 .content{

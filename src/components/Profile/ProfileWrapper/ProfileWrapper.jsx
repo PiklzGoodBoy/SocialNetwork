@@ -7,7 +7,7 @@ export default function ProfileWrapper(props) {
     return (
         <div className={style.ProfileWrapper}>
             <ProfileHeader />
-            <ProfileLayoutSplit state={props.state} addPost={props.addPost} />
+            <ProfileLayoutSplit posts={props.posts} newPostText={props.newPostText} updateNewPostText={props.updateNewPostText} addPost={props.addPost} />
         </div>
     )
 }

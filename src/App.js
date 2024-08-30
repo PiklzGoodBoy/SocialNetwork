@@ -12,35 +12,43 @@ import Music from './components/Music/Music';
 import Videos from './components/Videos/Videos';
 import Games from './components/Games/Games';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 export default function App(props) {
   return (
-    <BrowserRouter>
-      <div className={style.app_wrapper}>
-        <Header />
-        <div className={style.content}>
-          <span />
-          <LeftBar />
-          <div className={style.app_wrapper_content}>
-            <Routes>
-              <Route path='/' element={<Profile state={props.state} addPost={props.addPost}/>} />
-              <Route path='profile' element={<Profile state={props.state} addPost={props.addPost} updateNewPostText={props.updateNewPostText}/>}
+    <div className={style.app_wrapper}>
+      <Header />
+      <div className={style.content}>
+        <span />
+        <LeftBar />
+        <div className={style.app_wrapper_content}>
+          <Routes>
+            <Route path='/' element={
+              <Profile
+                state={props.state}
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
               />
-              <Route path='dialogs' element={<Dialogs state={props.state.dialogsPage} />}
-              />
-              <Route path='news' element={<News />} />
-              <Route path='friends' element={<Friends />} />
-              <Route path='community' element={<Community />} />
-              <Route path='music' element={<Music />} />
-              <Route path='videos' element={<Videos />} />
-              <Route path='games' element={<Games />} />
-            </Routes>
-          </div>
-          <span />
-
+            } />
+            <Route path='profile' element={<Profile
+              state={props.state}
+              addPost={props.addPost}
+              updateNewPostText={props.updateNewPostText}
+            />}
+            />
+            <Route path='dialogs' element={<Dialogs state={props.state.dialogsPage} />}
+            />
+            <Route path='news' element={<News />} />
+            <Route path='friends' element={<Friends />} />
+            <Route path='community' element={<Community />} />
+            <Route path='music' element={<Music />} />
+            <Route path='videos' element={<Videos />} />
+            <Route path='games' element={<Games />} />
+          </Routes>
         </div>
+        <span />
+
       </div>
-    </BrowserRouter>
+    </div>
   );
 }

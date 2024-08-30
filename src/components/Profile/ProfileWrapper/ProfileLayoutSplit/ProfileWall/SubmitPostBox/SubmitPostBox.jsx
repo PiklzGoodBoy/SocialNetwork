@@ -3,18 +3,20 @@ import style from './SubmitPostBox.module.css'
 
 
 export default function SubmitPostBox(props) {
+
   let newPostElement = React.createRef();
 
 
   let addPost = () => {
+    debugger
     props.addPost();
-    props.updateNewPostText('');
-
+    // props.updateNewPostText('');
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value
     props.updateNewPostText(text);
+    
   };
 
   return (

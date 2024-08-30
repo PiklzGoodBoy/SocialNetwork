@@ -26,14 +26,12 @@ export default function App(props) {
             <Route path='/' element={
               <Profile
                 state={props.state}
-                addPost={props.addPost}
-                updateNewPostText={props.updateNewPostText}
+                dispatch={props.dispatch}
               />
             } />
             <Route path='profile' element={<Profile
               state={props.state}
-              addPost={props.addPost}
-              updateNewPostText={props.updateNewPostText}
+              dispatch={props.dispatch}
             />}
             />
             <Route path='dialogs' element={<Dialogs state={props.state.dialogsPage} />}

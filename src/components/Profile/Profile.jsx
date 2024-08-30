@@ -8,8 +8,7 @@ export default function Profile(props) {
             <ProfileWrapper
                 posts={props.state.profilePage}
                 newPostText={props.state.profilePage.newPostText}
-                updateNewPostText={props.updateNewPostText}
-                addPost={props.addPost} />
+                dispatch={props.dispatch} />
         </div>
     );
 };

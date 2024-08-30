@@ -10,8 +10,7 @@ export default function ProfileWrapper(props) {
             <ProfileLayoutSplit
                 posts={props.posts}
                 newPostText={props.newPostText}
-                updateNewPostText={props.updateNewPostText}
-                addPost={props.addPost}
+                dispatch={props.dispatch}
             />
         </div>
     )

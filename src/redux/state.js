@@ -1,5 +1,7 @@
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_MESSAGES_TEXT = 'UPDATE-NEW-MESSAGES-TEXT';
+const ADD_MESSAGES = 'ADD-MESSAGES';
 
 
 
@@ -29,7 +31,8 @@ export let store = {
         { id: 3, message: 'Yo' },
         { id: 4, message: 'Yo' },
         { id: 5, message: 'Yo' }
-      ]
+      ],
+      newMessagesText: ['Messages']
     },
     sidebar: {}
   },
@@ -44,22 +47,6 @@ export let store = {
     this._callSubscriber = observer;
   },
 
-  // addPost() {
-  //   let newPost = {
-  //     id: 5,
-  //     message: this._state.profilePage.newPostText,
-  //     likesCount: 0
-  //   };
-  //   this._state.profilePage.posts.push(newPost);
-  //   this._state.profilePage.newPostText = '';
-  //   this._callSubscriber(this._state);
-  // },
-  // updateNewPostText(newText) {
-  //   this._state.profilePage.newPostText = newText;
-  //   this._callSubscriber(this._state)
-  // },
-
-
   dispatch(action) { // (type:'ADD-POST')
     if (action.type === ADD_POST) {
       let newPost = {
@@ -70,8 +57,23 @@ export let store = {
       this._state.profilePage.posts.push(newPost);
       this._state.profilePage.newPostText = '';
       this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
+    }
+    else if (action.type === UPDATE_NEW_POST_TEXT) {
       this._state.profilePage.newPostText = action.newText;
+      this._callSubscriber(this._state)
+    }
+    else if (action.type === ADD_MESSAGES) {
+      let newMessages = {
+        id: 5,
+        message: this._state.dialogsPage.newMessagesText,
+
+      }
+      this._state.dialogsPage.messages.push(newMessages);
+      this._state.dialogsPage.newMessagesText = '';
+      this._callSubscriber(this._state)
+    }
+    else if (action.type === UPDATE_NEW_MESSAGES_TEXT) {
+      this._state.dialogsPage.newMessagesText = action.newText
       this._callSubscriber(this._state)
     }
   }
@@ -84,8 +86,27 @@ export const addPostActionCreator = () => ({ type: ADD_POST })
 export const updateNewPostActionCreator = (text) =>
   ({ type: UPDATE_NEW_POST_TEXT, newText: text })
 
+export const updateMessagesActionCreator = (text) => ({ type: UPDATE_NEW_MESSAGES_TEXT, newText: text })
+export const addMessagesActionCreator = () => ({ type: ADD_MESSAGES })
+
 
 window.state = store;
 
 
 export default store;
+
+
+// addPost() {
+//   let newPost = {
+//     id: 5,
+//     message: this._state.profilePage.newPostText,
+//     likesCount: 0
+//   };
+//   this._state.profilePage.posts.push(newPost);
+//   this._state.profilePage.newPostText = '';
+//   this._callSubscriber(this._state);
+// },
+// updateNewPostText(newText) {
+//   this._state.profilePage.newPostText = newText;
+//   this._callSubscriber(this._state)
+// },

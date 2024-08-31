@@ -34,7 +34,9 @@ export default function App(props) {
               dispatch={props.dispatch}
             />}
             />
-            <Route path='dialogs' element={<Dialogs state={props.state.dialogsPage} />}
+            <Route path='dialogs' element={<Dialogs 
+                state={props.state}
+                dispatch={props.dispatch} />}
             />
             <Route path='news' element={<News />} />
             <Route path='friends' element={<Friends />} />

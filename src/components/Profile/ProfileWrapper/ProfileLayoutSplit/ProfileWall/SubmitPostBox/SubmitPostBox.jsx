@@ -5,7 +5,7 @@ import { addPostActionCreator,updateNewPostActionCreator } from '../../../../../
 export default function SubmitPostBox(props) {
 
 
-  let newPostElement = React.createRef();
+  let newPostElement = React.useRef();
 
   let addPost = () => {
     props.dispatch(addPostActionCreator())

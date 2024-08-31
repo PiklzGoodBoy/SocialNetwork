@@ -7,9 +7,13 @@ export default function Dialogs(props) {
 
     return (
         <div className={style.dialogs}>
-           
-            <DialogsList state={props.state}/>
-            <Messages state={props.state}/>
+
+            <DialogsList state={props.state} />
+            <Messages
+                state={props.state}
+                newMessagesText={props.state.dialogsPage.newMessagesText}
+                dispatch={props.dispatch}
+            />
         </div>
 
     )

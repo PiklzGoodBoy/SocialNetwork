@@ -1,31 +1,32 @@
 import React from 'react'
 import style from './SubmitMessages.module.css'
-import { addMessagesActionCreator,updateMessagesActionCreator } from '../../../../redux/state';
+import { sendMessagesCreator,updateMessagesCreator } from '../../../../redux/state';
 
 export default function SubmitMessages(props) {
 
-  let newMessElement = React.useRef();
+  // let newMessElement = React.useRef();
 
 
-  let addMess = () => {
-    props.dispatch(addMessagesActionCreator())
+  let onSendMessagesClick = () => {
+    props.dispatch(sendMessagesCreator())
   }
 
-  let onMessCahnge=()=>{
-    let text = newMessElement.current.value
-    let action = updateMessagesActionCreator(text)
+  let onNewdMessagesChange=(e)=>{
+    let text = e.target.value
+    props.dispatch(updateMessagesCreator(text))
     
-    props.dispatch(action)
+    // let action = updateMessagesCreator(text)
+    // props.dispatch(action)
   }
 
   return (
     <div className={style.SubmitMessages}>
       <textarea 
-      onChange={onMessCahnge}
-      ref={newMessElement}
-      value={props.newMessagesText}
+      onChange={onNewdMessagesChange}
+      // ref={newMessElement}
+      value={props.newMessagesBody}
       ></textarea>
-      <button onClick={addMess}>Add post</button>
+      <button onClick={onSendMessagesClick}>Add post</button>
     </div>
   )
 }

@@ -5,13 +5,15 @@ import Messages from './Messages/Messages'
 
 export default function Dialogs(props) {
 
+    let state = props.store.getState().dialogsPage;
+
     return (
         <div className={style.dialogs}>
 
-            <DialogsList state={props.state} />
+            <DialogsList state={state} />
             <Messages
-                state={props.state}
-                newMessagesText={props.state.dialogsPage.newMessagesText}
+                state={state}
+                newMessagesBody={state.newMessagesBody}
                 dispatch={props.dispatch}
             />
         </div>

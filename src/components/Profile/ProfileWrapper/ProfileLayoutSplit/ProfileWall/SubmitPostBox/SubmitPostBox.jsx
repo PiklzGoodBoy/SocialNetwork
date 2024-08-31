@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './SubmitPostBox.module.css'
-import { addPostActionCreator,updateNewPostActionCreator } from '../../../../../../redux/state';
+import { addPostCreator,updateNewPostCreator } from '../../../../../../redux/state';
 
 export default function SubmitPostBox(props) {
 
@@ -8,13 +8,13 @@ export default function SubmitPostBox(props) {
   let newPostElement = React.useRef();
 
   let addPost = () => {
-    props.dispatch(addPostActionCreator())
+    props.dispatch(addPostCreator())
     // props.addPost();
   };
 
   let onPostChange = () => {
     let text = newPostElement.current.value
-    let action = updateNewPostActionCreator(text);
+    let action = updateNewPostCreator(text);
     // props.updateNewPostText(text);
     // let action = { type: 'UPDATE-NEW-POST-TEXT', newText: text };
 

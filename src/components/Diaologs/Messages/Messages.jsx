@@ -6,7 +6,8 @@ import SubmitMessages from './SubmitMessages/SubmitMessages'
 
 export default function Messages(props) {
 
-    let MessagesElement = props.state.dialogsPage.messages
+
+    let MessagesElement = props.state.messages
         .map(m => <Message key={m.id} message={m.message} />)
 
     return (
@@ -15,7 +16,8 @@ export default function Messages(props) {
                 {MessagesElement}
             </div>
             <SubmitMessages
-                newMessagesText={props.newMessagesText}
+                store={props.state}
+                newMessagesBody={props.newMessagesBody}
                 dispatch={props.dispatch}
             />
         </div>

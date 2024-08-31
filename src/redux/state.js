@@ -1,7 +1,7 @@
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_MESSAGES_TEXT = 'UPDATE-NEW-MESSAGES-TEXT';
-const ADD_MESSAGES = 'ADD-MESSAGES';
+const UPDATE_NEW_MESSAGES_BODY = 'UPDATE-NEW-MESSAGES-BODY';
+const SEND_MESSAGES = 'SEND-MESSAGES';
 
 
 
@@ -32,7 +32,7 @@ export let store = {
         { id: 4, message: 'Yo' },
         { id: 5, message: 'Yo' }
       ],
-      newMessagesText: ['Messages']
+      newMessagesBody: ['Messages']
     },
     sidebar: {}
   },
@@ -62,18 +62,17 @@ export let store = {
       this._state.profilePage.newPostText = action.newText;
       this._callSubscriber(this._state)
     }
-    else if (action.type === ADD_MESSAGES) {
+    else if (action.type === SEND_MESSAGES) {
       let newMessages = {
         id: 5,
-        message: this._state.dialogsPage.newMessagesText,
-
+        message: this._state.dialogsPage.newMessagesBody,
       }
       this._state.dialogsPage.messages.push(newMessages);
-      this._state.dialogsPage.newMessagesText = '';
+      this._state.dialogsPage.newMessagesBody = '';
       this._callSubscriber(this._state)
     }
-    else if (action.type === UPDATE_NEW_MESSAGES_TEXT) {
-      this._state.dialogsPage.newMessagesText = action.newText
+    else if (action.type === UPDATE_NEW_MESSAGES_BODY) {
+      this._state.dialogsPage.newMessagesBody = action.body
       this._callSubscriber(this._state)
     }
   }
@@ -81,32 +80,16 @@ export let store = {
 }
 
 
-export const addPostActionCreator = () => ({ type: ADD_POST })
+export const addPostCreator = () => ({ type: ADD_POST })
 
-export const updateNewPostActionCreator = (text) =>
+export const updateNewPostCreator = (text) =>
   ({ type: UPDATE_NEW_POST_TEXT, newText: text })
 
-export const updateMessagesActionCreator = (text) => ({ type: UPDATE_NEW_MESSAGES_TEXT, newText: text })
-export const addMessagesActionCreator = () => ({ type: ADD_MESSAGES })
+export const updateMessagesCreator = (text) => ({ type: UPDATE_NEW_MESSAGES_BODY, body: text })
+export const sendMessagesCreator = () => ({ type: SEND_MESSAGES })
 
 
 window.state = store;
 
 
 export default store;
-
-
-// addPost() {
-//   let newPost = {
-//     id: 5,
-//     message: this._state.profilePage.newPostText,
-//     likesCount: 0
-//   };
-//   this._state.profilePage.posts.push(newPost);
-//   this._state.profilePage.newPostText = '';
-//   this._callSubscriber(this._state);
-// },
-// updateNewPostText(newText) {
-//   this._state.profilePage.newPostText = newText;
-//   this._callSubscriber(this._state)
-// },

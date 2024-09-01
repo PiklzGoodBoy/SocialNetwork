@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './SubmitPostBox.module.css'
-import { addPostCreator,updateNewPostCreator } from '../../../../../../redux/state';
+import { addPostCreator,updateNewPostCreator } from '../../../../../../redux/profile_reducer';
 
 export default function SubmitPostBox(props) {
 

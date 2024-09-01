@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './SubmitMessages.module.css'
-import { sendMessagesCreator,updateMessagesCreator } from '../../../../redux/state';
+import { sendMessagesCreator,updateMessagesCreator } from '../../../../redux/dialogs_reducer';
 
 export default function SubmitMessages(props) {
 

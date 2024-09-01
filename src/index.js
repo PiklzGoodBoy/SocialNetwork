@@ -1,10 +1,10 @@
 import React from 'react';
-import  ReactDOMclient from 'react-dom/client';
+import ReactDOMclient from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './redux/state';
+import store from './redux/redux_store';
 
 let rerenderEntireTree = (state) => {
     ReactDOMclient.createRoot(document.getElementById('root')).render(
@@ -22,6 +22,9 @@ let rerenderEntireTree = (state) => {
 
 rerenderEntireTree(store.getState());
 
-store.subscribe(rerenderEntireTree);
+store.subscribe(() => {
+    let state = store.getState();
+    rerenderEntireTree(state);
+});
 
 reportWebVitals();

@@ -7,9 +7,7 @@ export default function ProfileLayoutSplit(props) {
     return (
         <div className={style.ProfileLayoutSplit}>
             <ProfileWall
-                posts={props.posts}
-                newPostText={props.newPostText}
-                dispatch={props.dispatch}
+                store={props.store}
             />
             <ProfielRightCol />
         </div>

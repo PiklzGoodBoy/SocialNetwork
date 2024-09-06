@@ -6,9 +6,10 @@ export default function Profile(props) {
     return (
         <div className={style.Profile}>
             <ProfileWrapper
-                posts={props.state.profilePage}
-                newPostText={props.state.profilePage.newPostText}
-                dispatch={props.dispatch} />
+                store={props.store}
+                // newPostText={props.state.profilePage.newPostText}
+                // dispatch={props.dispatch} 1
+                />
         </div>
     );
 };

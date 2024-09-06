@@ -1,6 +1,5 @@
 import React from 'react'
 import style from './SubmitMessages.module.css'
-import { sendMessagesCreator,updateMessagesCreator } from '../../../../redux/dialogs_reducer';
 
 export default function SubmitMessages(props) {
 
@@ -8,23 +7,19 @@ export default function SubmitMessages(props) {
 
 
   let onSendMessagesClick = () => {
-    props.dispatch(sendMessagesCreator())
+    props.sendMessages()
   }
 
-  let onNewdMessagesChange=(e)=>{
-    let text = e.target.value
-    props.dispatch(updateMessagesCreator(text))
-    
-    // let action = updateMessagesCreator(text)
-    // props.dispatch(action)
+  let onNewdMessagesChange = (e) => {
+    let body = e.target.value
+    props.updateNewMessageBody(body)
   }
 
   return (
     <div className={style.SubmitMessages}>
-      <textarea 
-      onChange={onNewdMessagesChange}
-      // ref={newMessElement}
-      value={props.newMessagesBody}
+      <textarea
+        onChange={onNewdMessagesChange}
+        value={props.newMessagesBody}
       ></textarea>
       <button onClick={onSendMessagesClick}>Add post</button>
     </div>

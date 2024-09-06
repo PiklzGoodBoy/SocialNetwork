@@ -1,24 +1,20 @@
 import React from 'react'
 import Message from './Message/Message'
 import style from './Messages.module.css'
-import SubmitMessages from './SubmitMessages/SubmitMessages'
+import SubmitMessagesContainer from './SubmitMessages/SubmitMessagesContainer'
 
 
 export default function Messages(props) {
-
-
-    let MessagesElement = props.state.messages
-        .map(m => <Message key={m.id} message={m.message} />)
+    let state = props.store.getState().dialogsPage.messages
+    let MessagesElement = state.map(m => <Message key={m.id} message={m.message} />)
 
     return (
         <div className={style.message}>
             <div className={style.messages}>
                 {MessagesElement}
             </div>
-            <SubmitMessages
-                store={props.state}
-                newMessagesBody={props.newMessagesBody}
-                dispatch={props.dispatch}
+            <SubmitMessagesContainer
+                store={props.store}
             />
         </div>
     )

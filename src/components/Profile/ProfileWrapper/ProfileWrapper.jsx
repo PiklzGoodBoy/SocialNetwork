@@ -7,11 +7,7 @@ export default function ProfileWrapper(props) {
     return (
         <div className={style.ProfileWrapper}>
             <ProfileHeader />
-            <ProfileLayoutSplit
-                store={props.store}
-                // newPostText={props.newPostText}
-                // dispatch={props.dispatch}
-            />
+            <ProfileLayoutSplit />
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import './App.module.css';
 import style from './App.module.css';
-
+import React from 'react';
 import Header from './components/Header/Header';
 import Profile from "./components/Profile/Profile";
 import LeftBar from './components/LeftBar/LeftBar';
@@ -14,7 +14,7 @@ import Games from './components/Games/Games';
 
 import { Routes, Route } from 'react-router-dom';
 
-export default function App(props) {
+export default function App() {
   return (
     <div className={style.app_wrapper}>
       <Header />
@@ -23,19 +23,9 @@ export default function App(props) {
         <LeftBar />
         <div className={style.app_wrapper_content}>
           <Routes>
-            <Route path='/' element={
-              <Profile
-                store={props.store}
-              />
-            } />
-            <Route path='profile' element={<Profile
-              store={props.store}
-            />}
-            />
-            <Route path='dialogs' element={<Dialogs
-              store={props.store}
-            />}
-            />
+            <Route path='/' element={<Profile />} />
+            <Route path='profile' element={<Profile />} />
+            <Route path='dialogs' element={<Dialogs />} />
             <Route path='news' element={<News />} />
             <Route path='friends' element={<Friends />} />
             <Route path='community' element={<Community />} />

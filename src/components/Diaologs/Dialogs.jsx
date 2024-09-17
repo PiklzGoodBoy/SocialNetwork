@@ -7,11 +7,11 @@ export default function Dialogs(props) {
     return (
         <div className={style.dialogs}>
 
-            <DialogsList store={props.store} />
+            <DialogsList />
             <Messages
-                store={props.store}
-                // newMessagesBody={state.newMessagesBody}
-                // dispatch={props.dispatch}
+
+            // newMessagesBody={state.newMessagesBody}
+            // dispatch={props.dispatch}
             />
         </div>
 

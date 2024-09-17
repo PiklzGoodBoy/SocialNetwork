@@ -1,27 +1,27 @@
-import React from 'react'
+import {React,useContext} from 'react'
 import { sendMessagesCreator, updateMessagesCreator } from '../../../../redux/dialogs_reducer';
 import SubmitMessages from './SubmitMessages';
+import StoreContext from '../../../../StoreContext';
 
 export default function SubmitMessagesContainer(props) {
+    
+    const context = useContext(StoreContext)
     // let newMessElement = React.useRef();
-    let state = props.store.getState().dialogsPage.newMessagesBody;
+    let storeMessages = context.getState().dialogsPage.newMessagesBody;
 
     let onSendMessagesClick = () => {
-        props.store.dispatch(sendMessagesCreator())
+        context.dispatch(sendMessagesCreator())
     }
 
     let onNewdMessagesChange = (body) => {
-        props.store.dispatch(updateMessagesCreator(body))
-
-        // let action = updateMessagesCreator(text)
-        // props.dispatch(action)
+        context.dispatch(updateMessagesCreator(body))
     }
 
     return (
-        <SubmitMessages 
+        <SubmitMessages
             updateNewMessageBody={onNewdMessagesChange}
             sendMessages={onSendMessagesClick}
-            newMessagesBody={state}
+            newMessagesBody={storeMessages}
         />
     )
 }

@@ -1,13 +1,10 @@
-import {React,useContext} from 'react'
+import React from 'react'
 import style from './DialogsList.module.css'
 import DialogLink from './DialogLink/DialogLink'
-import StoreContext from '../../../StoreContext'
+import { connect } from 'react-redux'
 
-export default function DialogsList(props) {
-    const context = useContext(StoreContext)
-
-    let store = context.getState().dialogsPage
-    let dialogsElement = store.dialogs.map(d => <DialogLink key={d.id} name={d.name} id={d.id} />);
+function DialogsList(props) {
+    let dialogsElement = props.state.dialogs.map(d => <DialogLink key={d.id} name={d.name} id={d.id} />);
 
     return (
         <div className={style.DialogsList}>
@@ -17,3 +14,13 @@ export default function DialogsList(props) {
         </div>
     )
 }
+
+let mapStateToProps = (state) => {
+    return {
+        state: state.dialogsPage
+    }
+}
+
+const DialogsListContainer = connect(mapStateToProps)(DialogsList);
+
+export default DialogsListContainer;

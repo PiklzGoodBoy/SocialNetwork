@@ -1,26 +1,23 @@
-import { React, useContext } from 'react'
+import React from 'react'
 import { addPostCreator, updateNewPostCreator } from '../../../../../../redux/profile_reducer';
 import SubmitPostBox from './SubmitPostBox';
-import StoreContext from '../../../../../../StoreContext';
+import { connect } from 'react-redux';
 
-export default function SubmitPostBoxContainer() {
-
-    const ContextStore = useContext(StoreContext);
-    
-    let store = ContextStore.getState();  
-    let addPost = () => {
-        ContextStore.dispatch(addPostCreator())
-    };
-
-    let onPostChange = (text) => {
-        let action = updateNewPostCreator(text);
-        ContextStore.dispatch(action)
-    };
-
-
-    return <SubmitPostBox
-        addPost={addPost}
-        updateNewPostText={onPostChange}
-        newPostText={store.profilePage.newPostText}
-    />
+let mapStateToProps = (state) => {
+    return {
+        newPostText: state.profilePage.newPostText
+    }
 }
+let mapDispatchToProps = (dispatch) => {
+    return {
+        addPost: () => {
+            dispatch(addPostCreator())
+        },
+        updateNewPostText: (text) => {
+            dispatch(updateNewPostCreator(text))
+        }
+    }
+}
+const SubmitPostBoxContainer = connect(mapStateToProps, mapDispatchToProps)(SubmitPostBox);
+
+export default SubmitPostBoxContainer; 

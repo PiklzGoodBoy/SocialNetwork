@@ -14,7 +14,7 @@ import Games from './components/Games/Games';
 
 import { Routes, Route } from 'react-router-dom';
 
-export default function App() {
+export default function App(props) {
   return (
     <div className={style.app_wrapper}>
       <Header />

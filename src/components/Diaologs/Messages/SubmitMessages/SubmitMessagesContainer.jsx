@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
 
 //     let onNewdMessagesChange = (body) => {
 //         context.dispatch(updateMessagesCreator(body))
-//     }
+//     }updateNewMessageBody
 
 //     return (
 //         <SubmitMessages
@@ -31,14 +31,13 @@ let mapStateToProps = (state) => {
         newMessagesBody: state.dialogsPage.newMessagesBody
     }
 }
-
 let mapDispatchToProps = (dispatch) => {
     return {
         sendMessages: () => {
             dispatch(sendMessagesCreator())
         },
         updateNewMessageBody: (body) => {
-            updateMessagesCreator(body)
+            dispatch(updateMessagesCreator(body))
         }
     }
 }

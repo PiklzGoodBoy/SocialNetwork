@@ -2,8 +2,6 @@ import React from 'react'
 import style from './SubmitPostBox.module.css'
 
 export default function SubmitPostBox(props) {
-
-
   let newPostElement = React.useRef();
 
   let onAddPost = () => {

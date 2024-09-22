@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 
 function Messages(props) {
     let MessagesElement = props.state.map(m => <Message key={m.id} message={m.message} />);
-
     return (
         <div className={style.message}>
             <div className={style.messages}>

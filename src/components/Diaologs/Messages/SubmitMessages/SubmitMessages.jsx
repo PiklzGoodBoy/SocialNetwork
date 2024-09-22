@@ -2,10 +2,7 @@ import React from 'react'
 import style from './SubmitMessages.module.css'
 
 export default function SubmitMessages(props) {
-
   // let newMessElement = React.useRef();
-
-
   let onSendMessagesClick = () => {
     props.sendMessages()
   }

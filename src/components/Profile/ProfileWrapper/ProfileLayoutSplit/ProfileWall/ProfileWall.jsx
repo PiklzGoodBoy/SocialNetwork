@@ -7,10 +7,6 @@ import { connect } from 'react-redux';
 
 function ProfileWall(state) {
 
-  // let posts = props.store.getState().profilePage.posts;
-
-
-
   return (
     <div className={style.ProfileWall}>
       <InternalGroup />

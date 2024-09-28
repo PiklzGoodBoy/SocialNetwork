@@ -2,14 +2,13 @@ import React from 'react'
 import style from './SubmitPostBox.module.css'
 
 export default function SubmitPostBox(props) {
-  let newPostElement = React.useRef();
-
+  // let newPostElement = React.useRef();
   let onAddPost = () => {
     props.addPost();
   };
 
-  let onPostChange = () => {
-    let text = newPostElement.current.value
+  let onPostChange = (e) => {
+    let text = e.target.value
     props.updateNewPostText(text);
   };
 
@@ -19,12 +18,11 @@ export default function SubmitPostBox(props) {
       <div>
         <textarea
           onChange={onPostChange}
-          ref={newPostElement}
+          // ref={newPostElement}
           value={props.newPostText}
         />
       </div>
       <button onClick={onAddPost}>Add post</button>
-
     </div>
   )
 }

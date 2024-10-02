@@ -1,4 +1,4 @@
-.SubmitMessages{
+.SubmitMessages {
     display: grid;
     grid-template-columns: 8fr 2fr;
     background-color: #222222;
@@ -9,12 +9,13 @@
     color: aliceblue;
 }
 
-.SubmitMessages textarea{
+.SubmitMessages textarea {
     width: 96%;
     border-radius: 16px;
+    /* padding: 8x 0 0 8px; */
 }
 
-.SubmitMessages button{
+.SubmitMessages button {
     border-radius: 16px;
     margin-left: 4px;
 }

@@ -15,6 +15,7 @@ export default function SubmitMessages(props) {
   return (
     <div className={style.SubmitMessages}>
       <textarea
+        placeholder="Your message"
         onChange={onNewdMessagesChange}
         value={props.newMessagesBody}
       ></textarea>

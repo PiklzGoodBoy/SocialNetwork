@@ -17,7 +17,4 @@ let mapDispatchToProps = (dispatch) => {
         }
     }
 }
-
-const SubmitMessagesContainer = connect(mapStateToProps, mapDispatchToProps)(SubmitMessages);
-
-export default SubmitMessagesContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(SubmitMessages);

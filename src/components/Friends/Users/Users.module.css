@@ -1,0 +1,16 @@
+.Users {
+    padding-left: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #292929;
+    background-color: #222222;
+    align-items: center;
+    color: aliceblue;
+    height: 100%;
+}
+
+.Users img {
+    padding: 4px;
+    height: 64px;
+    width: 64px;
+    border-radius: 40px;
+}

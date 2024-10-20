@@ -1,16 +1,16 @@
-.LeftBar{
+.LeftBar {
     display: grid;
-    grid-template-rows: repeat(7,24px);
+    grid-template-rows: repeat(8, 24px);
     padding-left: 8px;
 
 }
 
-.LeftBar a{
+.LeftBar a {
     text-decoration: none;
     color: antiquewhite;
 }
 
-.LeftBar a:hover{
+.LeftBar a:hover {
     color: chocolate;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;

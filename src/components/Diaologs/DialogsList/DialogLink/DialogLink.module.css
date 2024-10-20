@@ -7,7 +7,7 @@
     border-radius: 16px;
 }
 
-.DialogLink:hover{
+.DialogLink:hover {
     background-color: rgba(158, 165, 62, 0.568);
 }
 
@@ -23,7 +23,7 @@
     padding-bottom: 16px;
 }
 
-img {
+.DialogLink img {
     padding: 4px;
     height: 64px;
     width: 64px;

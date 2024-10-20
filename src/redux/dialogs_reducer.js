@@ -3,12 +3,30 @@ const SEND_MESSAGES = "SEND-MESSAGES";
 
 let initialState = {
   dialogs: [
-    { id: 1, name: "Dimych" },
-    { id: 2, name: "Andrew" },
-    { id: 3, name: "Sveta" },
-    { id: 4, name: "Sasha" },
-    { id: 5, name: "Viktor" },
-    { id: 6, name: "Valera" },
+    {
+      id: 1, photoURL: 'https://images.unsplash.com/photo-1727731481816-bf055858e20f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      name: "Dimych"
+    },
+    {
+      id: 2, photoURL: 'https://images.unsplash.com/photo-1727731481816-bf055858e20f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      name: "Andrew"
+    },
+    {
+      id: 3, photoURL: 'https://images.unsplash.com/photo-1727731481816-bf055858e20f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      name: "Sveta"
+    },
+    {
+      id: 4, photoURL: 'https://images.unsplash.com/photo-1727731481816-bf055858e20f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      name: "Sasha"
+    },
+    {
+      id: 5, photoURL: 'https://images.unsplash.com/photo-1727731481816-bf055858e20f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      name: "Viktor"
+    },
+    {
+      id: 6, photoURL: 'https://images.unsplash.com/photo-1727731481816-bf055858e20f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      name: "Valera"
+    },
   ],
   messages: [
     { id: 1, message: "Hi" },

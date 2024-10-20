@@ -11,6 +11,8 @@ import Community from "./components/Community/Community";
 import Music from "./components/Music/Music";
 import Videos from "./components/Videos/Videos";
 import Games from "./components/Games/Games";
+// import UsersContainer from "./components/Friends/Users/UsersContainer";
+import Users from "./components/Friends/Users/Users";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -32,10 +34,11 @@ export default function App(props) {
             <Route path="music" element={<Music />} />
             <Route path="videos" element={<Videos />} />
             <Route path="games" element={<Games />} />
+
+            <Route path="usersearch" element={<Users />} />
           </Routes>
         </div>
         <span />
-
       </div>
     </div>
   );

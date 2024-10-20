@@ -2,10 +2,10 @@ import React from 'react'
 import style from './LeftBar.module.css'
 import { NavLink } from 'react-router-dom'
 
-export default function LeftBar ()  {
+export default function LeftBar() {
   return (
     <div className={style.LeftBar}>
-      <NavLink to="/profile" className={style.activeLink} >Моя страница</NavLink> 
+      <NavLink to="/profile" className={style.activeLink} >Моя страница</NavLink>
       <NavLink to="/news">Новости</NavLink>
       <NavLink to="/dialogs">Мессенджер</NavLink>
       <NavLink to="/friends">Друзья</NavLink>

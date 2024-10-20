@@ -4,7 +4,7 @@ import DialogLink from './DialogLink/DialogLink'
 import { connect } from 'react-redux'
 
 function DialogsList(props) {
-    let dialogsElement = props.state.dialogs.map(d => <DialogLink key={d.id} name={d.name} id={d.id} />);
+    let dialogsElement = props.state.dialogs.map(d => <DialogLink key={d.id} name={d.name} id={d.id} photoURL={d.photoURL} />);
 
     return (
         <div className={style.DialogsList}>

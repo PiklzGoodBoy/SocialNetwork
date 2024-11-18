@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Users from './Users'
-// import { follow, unfollow, set_users } from '../../../redux/users_reducer'
+import { follow, unfollow, set_users } from '../../../redux/users_reducer'
 
 let mapStateToProps = (state) => {
-    return { users: state.userPage.users }
+    return { users: state.users }
 }
 
 let mapDispatchToProps = (dispatch) => {

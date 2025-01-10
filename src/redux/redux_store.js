@@ -7,7 +7,7 @@ import usersReducer from './users_reducer'
 
 export const store = configureStore({
     reducer: {
-        users: usersReducer,
+        usersPage: usersReducer,
         profilePage: profileReducer,
         dialogsPage: dialogsReducer,
         sidebar: sidebarReducer,

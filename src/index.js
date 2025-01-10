@@ -1,11 +1,12 @@
-import React from 'react';
+import { React, StrictMode } from 'react';
 import ReactDOMclient from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import './index.css';
+import store from './redux/redux_store';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './redux/redux_store';
+import './index.css';
 
 
 const router = createBrowserRouter([
@@ -16,11 +17,11 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOMclient.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
+    <StrictMode>
         <Provider store={store}>
             <RouterProvider router={router} />
         </Provider>
-    </React.StrictMode>
+    </StrictMode>
 );
 
 reportWebVitals();

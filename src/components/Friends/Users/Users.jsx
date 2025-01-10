@@ -1,21 +1,31 @@
 import React from 'react'
-import { useEffect } from 'react'
 import style from './Users.module.css'
-import axios from 'axios'
 import UsPhoto from '../../../assets/images/images.png'
 
 export default function Users(props) {
-    useEffect(() => {
-        axios.get("https://social-network.samuraijs.com/api/1.0/users")
-            .then(response => {
-                props.setUsers(response.data.items);
-            });
-    }, []);
+
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
+    let pages = [];
+    for (let i = 1; i <= pagesCount; i++) {
+        pages.push(i);
+        if (i === 10) break
+    }
+
     return (
         <div className={style.Users}>
-            {props.users.users.map(u => <div key={u.id}>
+            <div>
+                {pages.map(p => {
+                    return <span key={p.id}
+                        className={props.pageNumber === p && style.selectedPage}
+                        onClick={(e) => {
+                            props.onPageChanged(p)
+                        }}
+                    >{p}</span>
+                })}
+            </div>
+            {props.users.map(u => <div key={u.id}>
                 <div>
-                    <img src={u.photos.small != null ? u.photos.small : UsPhoto} />
+                    <img src={u.photos.small != null ? u.photos.small : UsPhoto} alt='' />
                     <div>
                         {u.followed
                             ? <button onClick={() => { props.unfollow(u.id) }}>unfollow</button>

@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import style from './Friends.module.css'
 
 export default function Friends(props) {
+
   return (
     <div className={style.friends_block}>
 

@@ -1,4 +1,4 @@
-import { sendMessagesCreator, updateMessagesCreator } from '../../../../redux/dialogs_reducer';
+import { update_messages_creator, update_new_messages_body } from '../../../../redux/dialogs_reducer';
 import SubmitMessages from './SubmitMessages';
 import { connect } from 'react-redux';
 
@@ -10,10 +10,10 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
     return {
         sendMessages: () => {
-            dispatch(sendMessagesCreator())
+            dispatch(update_messages_creator())
         },
         updateNewMessageBody: (body) => {
-            dispatch(updateMessagesCreator(body))
+            dispatch(update_new_messages_body(body))
         }
     }
 }

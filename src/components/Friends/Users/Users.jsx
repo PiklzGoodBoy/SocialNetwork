@@ -15,8 +15,9 @@ export default function Users(props) {
         <div className={style.Users}>
             <div>
                 {pages.map(p => {
-                    return <span key={p.id}
-                        className={props.pageNumber === p && style.selectedPage}
+                    let pageId = p
+                    return <span key={pageId}
+                        className={props.currentPage === p && style.selectedPage}
                         onClick={(e) => {
                             props.onPageChanged(p)
                         }}

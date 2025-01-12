@@ -1,0 +1,6 @@
+.ProfileSettings {
+    padding-right: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* text-align: right; */
+}

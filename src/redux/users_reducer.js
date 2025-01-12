@@ -5,7 +5,7 @@ export const usersSlice = createSlice({
     initialState: {
         users: [],
         pageSize: 5,
-        totalUsersCount: 21,
+        totalUsersCount: 0,
         currentPage: 2
 
     },

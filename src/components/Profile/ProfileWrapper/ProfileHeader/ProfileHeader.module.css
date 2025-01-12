@@ -1,6 +1,6 @@
-.ProfileHeader{
+.ProfileHeader {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 12em 1fr 1fr;
     align-items: center;
     height: 180px;
     background-color: #222222;

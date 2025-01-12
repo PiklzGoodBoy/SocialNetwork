@@ -1,10 +1,10 @@
 .app_wrapper {
   height: 100vh;
   background-color: #141414;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
-.content{
+.content {
   display: grid;
-  grid-template-columns:2fr 1fr 6fr 2fr;
+  grid-template-columns: 16vmax 140px 1fr 16vmax;
 }

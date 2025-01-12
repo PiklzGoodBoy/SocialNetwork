@@ -1,19 +1,18 @@
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
-const ADD_POST = "ADD-POST";
+import { createSlice } from "@reduxjs/toolkit";
 
-let initialState = {
-  posts: [
-    { id: 1, message: "Hi, how are you?", likesCount: 12 },
-    { id: 2, message: "It's my first post", likesCount: 11 },
-    { id: 3, message: "Blabla", likesCount: 11 },
-    { id: 4, message: "Dada", likesCount: 11 },
-  ],
-  newPostText: "it-kamasutra.com",
-};
-
-export const profileReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_POST: {
+export const profileSlice = createSlice({
+  name: 'profile',
+  initialState: {
+    posts: [
+      { id: 1, message: "Hi, how are you?", likesCount: 12 },
+      { id: 2, message: "It's my first post", likesCount: 11 },
+      { id: 3, message: "Blabla", likesCount: 11 },
+      { id: 4, message: "Dada", likesCount: 11 },
+    ],
+    newPostText: "it-kamasutra.com"
+  },
+  reducers: {
+    add_post_creator: (state, action) => {
       let newPost = {
         id: 5,
         message: state.newPostText,
@@ -24,22 +23,16 @@ export const profileReducer = (state = initialState, action) => {
         posts: [...state.posts, newPost],
         newPostText: "",
       };
-    }
-    case UPDATE_NEW_POST_TEXT: {
+    },
+    update_new_post_creator: (state, action) => {
       return {
         ...state,
-        newPostText: action.newText,
-      };
+        newPostText: [action.payload],
+      }
     }
-    default:
-      return state;
+
   }
-};
+})
 
-export const addPostCreator = () => ({ type: ADD_POST });
-export const updateNewPostCreator = (text) => ({
-  type: UPDATE_NEW_POST_TEXT,
-  newText: text,
-});
-
-export default profileReducer;
+export const { add_post_creator, update_new_post_creator } = profileSlice.actions;
+export default profileSlice.reducer;

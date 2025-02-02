@@ -10,6 +10,7 @@ export const profileSlice = createSlice({
       { id: 4, message: "Dada", likesCount: 11 },
     ],
     newPostText: "it-kamasutra.com",
+    profile: null,
   },
   reducers: {
     addPost(state, action) {
@@ -24,8 +25,12 @@ export const profileSlice = createSlice({
     updateNewPostText(state, action) {
       state.newPostText = action.payload;
     },
+    setUserProfile(state, action) {
+      state.profile = action.payload;
+    },
   },
 });
 
-export const { addPost, updateNewPostText } = profileSlice.actions;
+export const { addPost, updateNewPostText, setUserProfile } =
+  profileSlice.actions;
 export default profileSlice.reducer;

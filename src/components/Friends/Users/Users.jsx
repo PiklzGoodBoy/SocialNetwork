@@ -32,11 +32,11 @@ export default function Users(props) {
       {props.users.map((u) => (
         <div key={u.id}>
           <div>
-            <NavLink to={"/profile"}>
-            <img
-              src={u.photos.small != null ? u.photos.small : UsPhoto}
-              alt=""
-            />
+            <NavLink to={"/profile/" + u.id}>
+              <img
+                src={u.photos.small != null ? u.photos.small : UsPhoto}
+                alt=""
+              />
             </NavLink>
             <div>
               {u.followed ? (

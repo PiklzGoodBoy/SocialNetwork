@@ -2,7 +2,6 @@ import "./App.module.css";
 import style from "./App.module.css";
 import React from "react";
 import Header from "./components/Header/Header";
-import Profile from "./components/Profile/Profile";
 import LeftBar from "./components/LeftBar/LeftBar";
 import Dialogs from "./components/Diaologs/Dialogs";
 import News from "./components/News/News";
@@ -11,8 +10,9 @@ import Community from "./components/Community/Community";
 import Music from "./components/Music/Music";
 import Videos from "./components/Videos/Videos";
 import Games from "./components/Games/Games";
+
 import UsersContainer from "./components/Friends/Users/UsersContainer";
-// import Users from "./components/Friends/Users/Users";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -25,8 +25,8 @@ export default function App(props) {
         <LeftBar />
         <div className={style.app_wrapper_content}>
           <Routes>
-            <Route path="/" element={<Profile />} />
-            <Route path="profile" element={<Profile />} />
+            <Route path="/" element={<ProfileContainer />} />
+            <Route path="profile" element={<ProfileContainer />} />
             <Route path="dialogs" element={<Dialogs />} />
             <Route path="news" element={<News />} />
             <Route path="friends" element={<Friends />} />

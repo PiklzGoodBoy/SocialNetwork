@@ -6,7 +6,7 @@ export const usersSlice = createSlice({
     users: [],
     pageSize: 5,
     totalUsersCount: 0,
-    currentPage: 2,
+    currentPage: 1,
     isFetching: false,
   },
   reducers: {
@@ -26,16 +26,16 @@ export const usersSlice = createSlice({
         return u;
       });
     },
-    set_users(state, action) {
+    setUsers(state, action) {
       state.users = [...action.payload];
     },
-    set_current_page(state, action) {
+    setCurrentPage(state, action) {
       state.currentPage = action.payload;
     },
-    set_total_users_count(state, action) {
+    setTotalUsersCount(state, action) {
       state.totalUsersCount = action.payload;
     },
-    toogle_is_fetching(state, action) {
+    toogleIsFetching(state, action) {
       state.isFetching = action.payload;
     },
   },
@@ -44,9 +44,9 @@ export const usersSlice = createSlice({
 export const {
   follow,
   unfollow,
-  set_users,
-  set_current_page,
-  set_total_users_count,
-  toogle_is_fetching,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+  toogleIsFetching,
 } = usersSlice.actions;
 export default usersSlice.reducer;

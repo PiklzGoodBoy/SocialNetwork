@@ -12,7 +12,7 @@ export const profileSlice = createSlice({
     newPostText: "it-kamasutra.com",
   },
   reducers: {
-    add_post_creator(state, action) {
+    addPost(state, action) {
       let newPost = {
         id: 5,
         message: state.newPostText,
@@ -21,12 +21,11 @@ export const profileSlice = createSlice({
       state.posts = [...state.posts, newPost];
       state.newPostText = "";
     },
-    update_new_post_creator(state, action) {
+    updateNewPostText(state, action) {
       state.newPostText = action.payload;
     },
   },
 });
 
-export const { add_post_creator, update_new_post_creator } =
-  profileSlice.actions;
+export const { addPost, updateNewPostText } = profileSlice.actions;
 export default profileSlice.reducer;

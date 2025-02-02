@@ -1,4 +1,4 @@
-import { update_messages_creator, update_new_messages_body } from '../../../../redux/dialogs_reducer';
+import { updateMessagesCreator, updateNewMessagesBody } from '../../../../redux/dialogs_reducer';
 import SubmitMessages from './SubmitMessages';
 import { connect } from 'react-redux';
 
@@ -7,14 +7,14 @@ let mapStateToProps = (state) => {
         newMessagesBody: state.dialogsPage.newMessagesBody
     }
 }
-let mapDispatchToProps = (dispatch) => {
-    return {
-        sendMessages: () => {
-            dispatch(update_messages_creator())
-        },
-        updateNewMessageBody: (body) => {
-            dispatch(update_new_messages_body(body))
-        }
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(SubmitMessages);
+// let mapDispatchToProps = (dispatch) => {
+//     return {
+//         sendMessages: () => {
+//             dispatch(updateMessagesCreator())
+//         },
+//         updateNewMessageBody: (body) => {
+//             dispatch(updateNewMessagesBody(body))
+//         }
+//     }
+// }
+export default connect(mapStateToProps, {updateMessagesCreator,updateNewMessagesBody})(SubmitMessages);

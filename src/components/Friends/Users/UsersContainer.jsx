@@ -6,10 +6,10 @@ import Preloader from "../../common/preloader/Preloader";
 import {
   follow,
   unfollow,
-  set_users,
-  set_current_page,
-  set_total_users_count,
-  toogle_is_fetching,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+  toogleIsFetching,
 } from "../../../redux/users_reducer";
 
 function UsersContainer(props) {
@@ -65,27 +65,34 @@ let mapStateToProps = (state) => {
   };
 };
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    follow: (userId) => {
-      dispatch(follow(userId));
-    },
-    unfollow: (userId) => {
-      dispatch(unfollow(userId));
-    },
-    setUsers: (users) => {
-      dispatch(set_users(users));
-    },
-    setCurrentPage: (pageNumber) => {
-      dispatch(set_current_page(pageNumber));
-    },
-    setTotalUsersCount: (totalUsersCount) => {
-      dispatch(set_total_users_count(totalUsersCount));
-    },
-    toogleIsFetching: (isFetching) => {
-      dispatch(toogle_is_fetching(isFetching));
-    },
-  };
-};
+// let mapDispatchToProps = (dispatch) => {
+//   return {
+//     follow: (userId) => {
+//       dispatch(followAC(userId));
+//     },
+//     unfollow: (userId) => {
+//       dispatch(unfollowAC(userId));
+//     },
+//     setUsers: (users) => {
+//       dispatch(setUsersAC(users));
+//     },
+//     setCurrentPage: (pageNumber) => {
+//       dispatch(setCurrentPageAC(pageNumber));
+//     },
+//     setTotalUsersCount: (totalUsersCount) => {
+//       dispatch(setTotalUsersCountAC(totalUsersCount));
+//     },
+//     toogleIsFetching: (isFetching) => {
+//       dispatch(toogleIsFetchingAC(isFetching));
+//     },
+//   };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps, {
+  follow,
+  unfollow,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+  toogleIsFetching,
+})(UsersContainer);

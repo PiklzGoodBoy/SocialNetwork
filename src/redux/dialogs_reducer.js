@@ -51,7 +51,7 @@ export const dialogsSLcie = createSlice({
     newMessagesBody: "",
   },
   reducers: {
-    update_messages_creator(state, action) {
+    updateMessagesCreator(state, action) {
       let newMessages = {
         id: 6,
         message: state.newMessagesBody,
@@ -59,12 +59,12 @@ export const dialogsSLcie = createSlice({
       state.newMessagesBody = "";
       state.messages = [...state.messages, newMessages];
     },
-    update_new_messages_body(state, action) {
+    updateNewMessagesBody(state, action) {
       state.newMessagesBody = action.payload;
     },
   },
 });
 
-export const { update_messages_creator, update_new_messages_body } =
+export const { updateMessagesCreator, updateNewMessagesBody } =
   dialogsSLcie.actions;
 export default dialogsSLcie.reducer;

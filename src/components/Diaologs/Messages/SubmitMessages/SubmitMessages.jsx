@@ -4,12 +4,12 @@ import style from './SubmitMessages.module.css'
 export default function SubmitMessages(props) {
   // let newMessElement = React.useRef();
   let onSendMessagesClick = () => {
-    props.sendMessages()
+    props.updateMessagesCreator()
   }
 
   let onNewdMessagesChange = (e) => {
     let body = e.target.value
-    props.updateNewMessageBody(body)
+    props.updateNewMessagesBody(body)
   }
 
   return (

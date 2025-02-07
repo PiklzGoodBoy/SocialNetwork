@@ -14,9 +14,10 @@ import Games from "./components/Games/Games";
 import UsersContainer from "./components/Friends/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 
 export default function App(props) {
+  let { userId } = useParams();
   return (
     <div className={style.app_wrapper}>
       <Header />
@@ -25,8 +26,8 @@ export default function App(props) {
         <LeftBar />
         <div className={style.app_wrapper_content}>
           <Routes>
-            <Route path="/" element={<ProfileContainer />} />
-            <Route path="profile" element={<ProfileContainer />} />
+            {/* <Route path="profile" element={<ProfileContainer />} /> */}
+            <Route path="profile/:userId?" element={<ProfileContainer />} />
             <Route path="dialogs" element={<Dialogs />} />
             <Route path="news" element={<News />} />
             <Route path="friends" element={<Friends />} />

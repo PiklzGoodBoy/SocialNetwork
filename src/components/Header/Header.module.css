@@ -14,3 +14,9 @@
     
     grid-area: h;
 }
+
+.loginBlock{
+    display: grid;
+    justify-items:center ;
+    float: right;
+}

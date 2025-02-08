@@ -2,7 +2,6 @@ import React from 'react'
 import style from './SubmitPostBox.module.css'
 
 export default function SubmitPostBox(props) {
-  // let newPostElement = React.useRef();
   let onAddPost = () => {
     props.addPost();
   };
@@ -18,7 +17,6 @@ export default function SubmitPostBox(props) {
       <div>
         <textarea
           onChange={onPostChange}
-          // ref={newPostElement}
           value={props.newPostText}
         />
       </div>

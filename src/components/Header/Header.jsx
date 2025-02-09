@@ -9,8 +9,9 @@ export default function Header(props) {
       <Logo />
       <div className="midleHeader">midle</div>
       <div className={style.loginBlock}>
+        <div className={style.avatarHead}></div>
         {props.isAuth ? (
-          <Link to={"/login-" + props.login}>{props.login} </Link>
+          <Link to={"/login/" + props.id}>{props.login} </Link>
         ) : (
           <Link to={"/login"}>login</Link>
         )}

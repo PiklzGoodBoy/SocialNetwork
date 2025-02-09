@@ -1,22 +1,31 @@
-.Header{
-    display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
+.Header {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
 
-    position: sticky;
-    top: 0;
-    padding-left:8px ;
-    margin-bottom: 8px;
-    border: 1px solid #292929;
-    background-color: #222222;
-    align-items: center;
-    color: aliceblue;
-    height: 48px;
-    
-    grid-area: h;
+  position: sticky;
+  top: 0;
+  padding-left: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #292929;
+  background-color: #222222;
+  align-items: center;
+  color: aliceblue;
+  height: 48px;
+
+  grid-area: h;
 }
 
-.loginBlock{
-    display: grid;
-    justify-items:center ;
-    float: right;
+.loginBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  float: right;
+}
+
+.avatarHead {
+  background-color: aliceblue;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
 }

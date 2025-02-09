@@ -18,7 +18,10 @@ function UsersContainer(props) {
     props.toogleIsFetching(true);
     axios
       .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${props.pageSize}`
+        `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${props.pageSize}`,
+        {
+          withCredentials: true,
+        }
       )
       .then((response) => {
         props.toogleIsFetching(false);
@@ -30,7 +33,10 @@ function UsersContainer(props) {
     props.toogleIsFetching(true);
     axios
       .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${props.currentPage}&count=${props.pageSize}`
+        `https://social-network.samuraijs.com/api/1.0/users?page=${props.currentPage}&count=${props.pageSize}`,
+        {
+          withCredentials: true,
+        }
       )
       .then((response) => {
         props.toogleIsFetching(false);

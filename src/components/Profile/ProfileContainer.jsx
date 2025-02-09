@@ -8,7 +8,7 @@ import { setUserProfile } from "../../redux/profile_reducer";
 const ProfileContainer = (props) => {
   let { userId } = useParams();
   if (!userId) {
-    userId = 2;
+    userId = 31889;
   }
   useEffect(() => {
     axios

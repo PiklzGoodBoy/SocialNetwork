@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import Users from "./Users";
-import axios from "axios";
 import Preloader from "../../common/preloader/Preloader";
 import {
   follow,
@@ -11,38 +10,25 @@ import {
   setTotalUsersCount,
   toogleIsFetching,
 } from "../../../redux/users_reducer";
+import { getUsers } from "../../../api/api";
 
 function UsersContainer(props) {
   const onPageChanged = (pageNumber) => {
     props.setCurrentPage(pageNumber);
     props.toogleIsFetching(true);
-    axios
-      .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${props.pageSize}`,
-        {
-          withCredentials: true,
-        }
-      )
-      .then((response) => {
-        props.toogleIsFetching(false);
-        props.setUsers(response.data.items);
-      });
+    getUsers(pageNumber, props.pageSize).then((data) => {
+      props.toogleIsFetching(false);
+      props.setUsers(data.items);
+    });
   };
 
   useEffect(() => {
     props.toogleIsFetching(true);
-    axios
-      .get(
-        `https://social-network.samuraijs.com/api/1.0/users?page=${props.currentPage}&count=${props.pageSize}`,
-        {
-          withCredentials: true,
-        }
-      )
-      .then((response) => {
-        props.toogleIsFetching(false);
-        props.setUsers(response.data.items);
-        props.setTotalUsersCount(response.data.totalCount);
-      });
+    getUsers(props.currentPage, props.pageSize).then((data) => {
+      props.toogleIsFetching(false);
+      props.setUsers(data.items);
+      props.setTotalUsersCount(data.totalCount);
+    });
   }, []);
 
   return (

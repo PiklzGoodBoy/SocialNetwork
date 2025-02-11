@@ -1,38 +1,25 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import { connect } from "react-redux";
 import { setAuthUserData, setAuthUserInfo } from "../../redux/auth_reducer";
 import Header from "./Header";
+import { getLogin, getProfile } from "../../api/api";
 
 function HeaderContainer(props) {
   // if (!userId) {
   //   userId = 2;
   // }
   useEffect(() => {
-    axios
-      .get(`https://social-network.samuraijs.com/api/1.0/auth/me`, {
-        withCredentials: true,
-      })
-      .then((response) => {
-        if (response.data.resultCode === 0) {
-          // let { id, login, email } = response.data.data;
-          props.setAuthUserData(response.data.data);
-          let idAuthUser = response.data.data.id;
-          axios
-            .get(
-              `https://social-network.samuraijs.com/api/1.0/profile/${idAuthUser}`
-            )
-            .then((response) => {
-              props.setAuthUserInfo(response.data);
-            });
-        }
-      });
+    getLogin().then((data) => {
+      if (data.resultCode === 0) {
+        props.setAuthUserData(data.data);
+        let userId = data.data.id;
+        getProfile(userId).then((data) => {
+          props.setAuthUserInfo(data);
+        });
+      }
+    });
   }, []);
-  return (
-    <Header
-      {...props}
-    />
-  );
+  return <Header {...props} />;
 }
 
 const mapStateToProps = (state) => ({

@@ -1,16 +1,18 @@
-import React from 'react'
-import style from './SubmitMessages.module.css'
+import React from "react";
+import style from "./SubmitMessages.module.css";
 
 export default function SubmitMessages(props) {
-  // let newMessElement = React.useRef();
   let onSendMessagesClick = () => {
-    props.updateMessagesCreator()
-  }
+    props.updateMessagesCreator();
+  };
 
   let onNewdMessagesChange = (e) => {
-    let body = e.target.value
-    props.updateNewMessagesBody(body)
-  }
+    let body = e.target.value;
+    props.updateNewMessagesBody(body);
+  };
+
+ 
+  // alert(props.isAuth);
 
   return (
     <div className={style.SubmitMessages}>
@@ -21,5 +23,5 @@ export default function SubmitMessages(props) {
       ></textarea>
       <button onClick={onSendMessagesClick}>Add post</button>
     </div>
-  )
+  );
 }

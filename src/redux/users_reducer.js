@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { usersAPI } from "../api/api";
 
 export const usersSlice = createSlice({
   name: "users",
@@ -8,9 +9,10 @@ export const usersSlice = createSlice({
     totalUsersCount: 0,
     currentPage: 1,
     isFetching: false,
+    followingInProgres: [],
   },
   reducers: {
-    follow(state, action) {
+    followSuccess(state, action) {
       state.users = state.users.map((u) => {
         if (u.id === action.payload) {
           return { ...u, followed: true };
@@ -18,7 +20,7 @@ export const usersSlice = createSlice({
         return u;
       });
     },
-    unfollow(state, action) {
+    unfollowSuccess(state, action) {
       state.users = state.users.map((u) => {
         if (u.id === action.payload) {
           return { ...u, followed: false };
@@ -38,15 +40,58 @@ export const usersSlice = createSlice({
     toogleIsFetching(state, action) {
       state.isFetching = action.payload;
     },
+    toogleIsFollowingProgres(state, action) {
+      state.followingInProgres = action.payload.follow
+        ? [...state.followingInProgres, action.payload.userId]
+        : state.followingInProgres.filter((id) => id !== action.payload.userId);
+    },
   },
 });
 
+export const getUsers = (currentPage, pageSize) => {
+  return (dispatch) => {
+    dispatch(toogleIsFetching(true));
+    dispatch(setCurrentPage(currentPage));
+    usersAPI.getUsers(currentPage, pageSize).then((data) => {
+      dispatch(toogleIsFetching(false));
+      dispatch(setUsers(data.items));
+      dispatch(setTotalUsersCount(data.totalCount));
+    });
+  };
+};
+
+export const follow = (userId) => {
+  return (dispatch) => {
+    dispatch(toogleIsFollowingProgres({ follow: true, userId }));
+    usersAPI.follow(userId).then((response) => {
+      if (response.data.resultCode === 0) {
+        dispatch(followSuccess(userId));
+      }
+      dispatch(toogleIsFollowingProgres({ follow: false, userId }));
+    });
+  };
+};
+
+export const unfollow = (userId) => {
+  return (dispatch) => {
+    dispatch(toogleIsFollowingProgres({ follow: true, userId }));
+    usersAPI.unfollow(userId).then((response) => {
+      if (response.data.resultCode === 0) {
+        dispatch(unfollowSuccess(userId));
+      }
+      dispatch(toogleIsFollowingProgres({ follow: false, userId }));
+    });
+  };
+};
+
 export const {
-  follow,
-  unfollow,
+  followSuccess,
+  unfollowSuccess,
   setUsers,
   setCurrentPage,
   setTotalUsersCount,
   toogleIsFetching,
+  toogleIsFollowingProgres,
 } = usersSlice.actions;
+
 export default usersSlice.reducer;

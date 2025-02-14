@@ -1,8 +1,7 @@
 import React from "react";
 import style from "./Users.module.css";
-import UsPhoto from "../../../assets/images/images.png";
+import usPhoto from "../../../assets/images/images.png";
 import { NavLink } from "react-router-dom";
-import { Unfollow, Follow } from "../../../api/api";
 
 export default function Users(props) {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -35,23 +34,30 @@ export default function Users(props) {
           <div>
             <NavLink to={"/profile/" + u.id}>
               <img
-                src={u.photos.small != null ? u.photos.small : UsPhoto}
+                src={u.photos.small != null ? u.photos.small : usPhoto}
                 alt=""
               />
             </NavLink>
+
             <div>
               {u.followed ? (
                 <button
+                  disabled={props.followingInProgres.some(
+                    (userId) => userId === u.id
+                  )}
                   onClick={() => {
-                    Unfollow(u.id, props.unfollow);
+                    props.unfollow(u.id);
                   }}
                 >
                   unfollow
                 </button>
               ) : (
                 <button
+                  disabled={props.followingInProgres.some(
+                    (userId) => userId === u.id
+                  )}
                   onClick={() => {
-                    Follow(u.id, props.follow);
+                    props.follow(u.id);
                   }}
                 >
                   follow

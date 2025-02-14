@@ -7,7 +7,7 @@ export default function ProfileWrapper(props) {
   return (
     <div className={style.ProfileWrapper}>
       <ProfileHeader profile={props.profile} />
-      <ProfileLayoutSplit />
+      <ProfileLayoutSplit posts={props.posts} />
     </div>
   );
 }

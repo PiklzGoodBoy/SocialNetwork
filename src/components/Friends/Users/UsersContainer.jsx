@@ -5,30 +5,17 @@ import Preloader from "../../common/preloader/Preloader";
 import {
   follow,
   unfollow,
-  setUsers,
-  setCurrentPage,
-  setTotalUsersCount,
-  toogleIsFetching,
+  toogleIsFollowingProgres,
+  getUsers,
 } from "../../../redux/users_reducer";
-import { getUsers } from "../../../api/api";
 
 function UsersContainer(props) {
   const onPageChanged = (pageNumber) => {
-    props.setCurrentPage(pageNumber);
-    props.toogleIsFetching(true);
-    getUsers(pageNumber, props.pageSize).then((data) => {
-      props.toogleIsFetching(false);
-      props.setUsers(data.items);
-    });
+    props.getUsers(pageNumber, props.pageSize);
   };
 
   useEffect(() => {
-    props.toogleIsFetching(true);
-    getUsers(props.currentPage, props.pageSize).then((data) => {
-      props.toogleIsFetching(false);
-      props.setUsers(data.items);
-      props.setTotalUsersCount(data.totalCount);
-    });
+    props.getUsers(props.currentPage, props.pageSize);
   }, []);
 
   return (
@@ -42,6 +29,7 @@ function UsersContainer(props) {
         users={props.users}
         follow={props.follow}
         unfollow={props.unfollow}
+        followingInProgres={props.followingInProgres}
       />
     </>
   );
@@ -54,6 +42,7 @@ let mapStateToProps = (state) => {
     totalUsersCount: state.usersPage.totalUsersCount,
     currentPage: state.usersPage.currentPage,
     isFetching: state.usersPage.isFetching,
+    followingInProgres: state.usersPage.followingInProgres,
   };
 };
 
@@ -83,8 +72,6 @@ let mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   follow,
   unfollow,
-  setUsers,
-  setCurrentPage,
-  setTotalUsersCount,
-  toogleIsFetching,
+  toogleIsFollowingProgres,
+  getUsers,
 })(UsersContainer);

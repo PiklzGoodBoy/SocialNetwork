@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { usersAPI } from "../api/api";
 
 export const profileSlice = createSlice({
   name: "profile",
@@ -30,6 +31,14 @@ export const profileSlice = createSlice({
     },
   },
 });
+
+export const getUserProfile = (userId) => {
+  return (dispatch) => {
+    usersAPI.getProfile(userId).then((data) => {
+      dispatch(setUserProfile(data));
+    });
+  };
+};
 
 export const { addPost, updateNewPostText, setUserProfile } =
   profileSlice.actions;

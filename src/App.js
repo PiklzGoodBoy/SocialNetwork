@@ -3,13 +3,14 @@ import style from "./App.module.css";
 import React from "react";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LeftBar from "./components/LeftBar/LeftBar";
-import Dialogs from "./components/Diaologs/Dialogs";
+import DialogsContainer from "./components/Diaologs/Dialogs";
 import News from "./components/News/News";
 import Friends from "./components/Friends/Friends";
 import Community from "./components/Community/Community";
 import Music from "./components/Music/Music";
 import Videos from "./components/Videos/Videos";
 import Games from "./components/Games/Games";
+import Login from "./components/Login/Login";
 
 import UsersContainer from "./components/Friends/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
@@ -25,8 +26,9 @@ export default function App(props) {
         <LeftBar />
         <div className={style.app_wrapper_content}>
           <Routes>
+            <Route path="login" element={<Login />} />
             <Route path="profile/:userId?" element={<ProfileContainer />} />
-            <Route path="dialogs" element={<Dialogs />} />
+            <Route path="dialogs" element={<DialogsContainer />} />
             <Route path="news" element={<News />} />
             <Route path="friends" element={<Friends />} />
             <Route path="community" element={<Community />} />

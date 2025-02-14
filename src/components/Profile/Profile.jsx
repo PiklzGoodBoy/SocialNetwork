@@ -4,7 +4,7 @@ import ProfileWrapper from "./ProfileWrapper/ProfileWrapper";
 export default function Profile(props) {
   return (
     <div className={style.Profile}>
-      <ProfileWrapper profile={props.profile} />
+      <ProfileWrapper profile={props.profile} posts={props.posts} />
     </div>
   );
 }

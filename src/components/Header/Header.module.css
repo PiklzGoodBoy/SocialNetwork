@@ -1,7 +1,7 @@
 .Header {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-
+  z-index: 1;
   position: sticky;
   top: 0;
   padding-left: 8px;

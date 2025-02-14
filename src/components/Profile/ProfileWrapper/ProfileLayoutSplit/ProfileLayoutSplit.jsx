@@ -6,7 +6,7 @@ import ProfielRightCol from './ProfileRightCol/ProfielRightCol'
 export default function ProfileLayoutSplit(props) {
     return (
         <div className={style.ProfileLayoutSplit}>
-            <ProfileWall profile={props.profile}/>
+            <ProfileWall posts={props.posts}/>
             <ProfielRightCol />
         </div>
     )

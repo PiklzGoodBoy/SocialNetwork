@@ -1,23 +1,11 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { setAuthUserData, setAuthUserInfo } from "../../redux/auth_reducer";
+import { getAuthUserData } from "../../redux/auth_reducer";
 import Header from "./Header";
-import { getLogin, getProfile } from "../../api/api";
 
 function HeaderContainer(props) {
-  // if (!userId) {
-  //   userId = 2;
-  // }
   useEffect(() => {
-    getLogin().then((data) => {
-      if (data.resultCode === 0) {
-        props.setAuthUserData(data.data);
-        let userId = data.data.id;
-        getProfile(userId).then((data) => {
-          props.setAuthUserInfo(data);
-        });
-      }
-    });
+    props.getAuthUserData();
   }, []);
   return <Header {...props} />;
 }
@@ -29,6 +17,6 @@ const mapStateToProps = (state) => ({
   id: state.auth.id,
   photoSmall: state.auth.photoSmall,
 });
-export default connect(mapStateToProps, { setAuthUserData, setAuthUserInfo })(
-  HeaderContainer
-);
+export default connect(mapStateToProps, {
+  getAuthUserData,
+})(HeaderContainer);

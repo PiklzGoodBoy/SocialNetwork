@@ -1,12 +1,13 @@
-import React from 'react'
-import style from './ProfileImg.module.css'
-import ImgAvatar from '../../../../../Img/ProfielImg/nicolas-horn-MTZTGvDsHFY-unsplash.jpg'
-
+import React from "react";
+import style from "./ProfileImg.module.css";
+import usPhoto from '../../../../../assets/images/images.png'
 export default function ProfileImg(props) {
   return (
-    <div className={style.ProfileImg}>  
-      <img src={props.photo} alt="ImgAvatar"/>
+    <div className={style.ProfileImg}>
+      <img
+        src={props.photo != null ? props.photo : usPhoto}
+        alt="ImgAvatar"
+      />
     </div>
-  )
+  );
 }
-
